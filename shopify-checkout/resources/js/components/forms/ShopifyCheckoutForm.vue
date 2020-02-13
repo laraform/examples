@@ -32,6 +32,8 @@
         },
       }
     },
+
+    // Update colums and shipping options on country change
     watch: {
       'data.country': {
         handler(country) {
@@ -55,6 +57,7 @@
         },
       },
     },
+
     computed: {
       shippingOptions(){
         return {
@@ -85,9 +88,12 @@
         }
       }
     },
+
     mounted() {
       // Handle form success event
       this.on('success', (response) => {
+        alert('Order sent!')
+        
         console.log(response)
       })
     }
