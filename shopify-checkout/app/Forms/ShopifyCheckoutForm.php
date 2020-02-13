@@ -10,6 +10,9 @@ class ShopifyCheckoutForm extends \Laraform
   // Assigning Vue component
   public $component = 'shopify-checkout-form';
 
+  // Validate on value change & submit
+  public $validateOn = 'change|submit';
+
   // Hiding labels by default
   public $labels = false;
 
@@ -58,8 +61,7 @@ class ShopifyCheckoutForm extends \Laraform
   ];
 
   // Defining form elements
-  public function schema()
-  {
+  public function schema() {
     return [
 
       // 'Contact information' (email)
@@ -71,7 +73,7 @@ class ShopifyCheckoutForm extends \Laraform
             'type' => 'text',
             'placeholder' => 'Email',
             'floating' => 'Email',
-            'rules' => 'required|email:debounce=300',
+            'rules' => 'required|email',
           ],
           'updates' => [
             'type' => 'checkbox',
@@ -194,9 +196,11 @@ class ShopifyCheckoutForm extends \Laraform
             'text' => 'Credit card',
             'fieldName' =>  'payment_method',
             'after' => '<span class="card-logos"></span>',
-            'rules' => [[
-              'required' => ['payment_method.paypal', null]
-            ]],
+            'rules' => [
+              [
+                'required' => ['paypal', null]
+              ]
+            ],
             'messages' => [
               'required' => 'One payment method must be choosen.'
             ]
@@ -243,9 +247,11 @@ class ShopifyCheckoutForm extends \Laraform
             'class' => 'paypal-payment',
             'fieldName' => 'payment_method',
             'after' => '<span class="card-logos only-3"></span>',
-            'rules' => [[
-              'required' => ['payment_method.credit_card', null]
-            ]],
+            'rules' => [
+              [
+                'required' => ['credit_card', null]
+              ]
+            ],
             'messages' => [
               'required' => 'One payment method must be choosen.'
             ]
@@ -273,9 +279,11 @@ class ShopifyCheckoutForm extends \Laraform
             'type' => 'radio',
             'text' => 'Same as shipping address',
             'fieldName' => 'billing_address',
-            'rules' => [[
-              'required' => ['billing_address.different', null]
-            ]],
+            'rules' => [
+              [
+                'required' => ['billing_address.different', null]
+              ]
+            ],
             'messages' => [
               'required' => 'One billing address option must be choosen.'
             ]
@@ -284,9 +292,11 @@ class ShopifyCheckoutForm extends \Laraform
             'type' => 'radio',
             'text' => 'Use a different billing address',
             'fieldName' => 'billing_address',
-            'rules' => [[
-              'required' => ['billing_address.same', null]
-            ]],
+            'rules' => [
+              [
+                'required' => ['billing_address.same', null]
+              ]
+            ],
             'messages' => [
               'required' => 'One billing address option must be choosen.'
             ]
@@ -364,12 +374,6 @@ class ShopifyCheckoutForm extends \Laraform
                 'rules' => 'required',
                 'columns' => 4
               ],
-              'phone' => [
-                'type' => 'text',
-                'placeholder' => 'Phone',
-                'floating' => 'Phone',
-                'rules' => 'required'
-              ],
             ]
           ]
         ],
@@ -432,7 +436,7 @@ class ShopifyCheckoutForm extends \Laraform
   public function after() {
     // Process data here
 
-    dd($this->data);
+    return $this->data;
   }
 
   public static $states = [

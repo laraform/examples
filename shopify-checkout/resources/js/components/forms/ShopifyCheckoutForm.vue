@@ -37,21 +37,13 @@
     watch: {
       'data.country': {
         handler(country) {
-          if (!country) {
-            var country = 'de'
-          }
-
-          this.el$('shipping_method').items = this.shippingOptions[country]
+          this.el$('shipping_method').items = this.shippingOptions[country || 'us']
           this.el$('shipping_address.country').updateColumns(country == 'us' ? 5 : 8)
           this.el$('shipping_address.zip_code').updateColumns(country == 'us' ? 3 : 4)
         },
       },
       'data.billing_address.country': {
         handler(country) {
-          if (!country) {
-            var country = 'de'
-          }
-
           this.el$('billing_address.billing_info.country').updateColumns(country == 'us' ? 5 : 8)
           this.el$('billing_address.billing_info.zip_code').updateColumns(country == 'us' ? 3 : 4)
         },
@@ -91,7 +83,7 @@
 
     mounted() {
       // Handle form success event
-      this.on('success', (response) => {
+      this.on('response', (response) => {
         alert('Order sent!')
         
         console.log(response)
