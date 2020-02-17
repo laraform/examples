@@ -1,4 +1,4 @@
- require('./bootstrap');
+require('./bootstrap');
 
 import Vue from 'vue'
 import Laraform from '@laraform/laraform/src'
@@ -23,5 +23,5 @@ Vue.component('PaymentElement', PaymentElement)
 Vue.component('ShopifyCheckoutForm', ShopifyCheckoutForm)
 
 const app = new Vue({
-  el: '#app',
+  el: '#app'
 })
