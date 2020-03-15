@@ -3,6 +3,7 @@
 namespace App\Forms;
 
 use Auth;
+use Illuminate\Support\Arr;
 
 class LoginForm extends \Laraform
 {
@@ -57,7 +58,7 @@ class LoginForm extends \Laraform
   }
 
   public function after () {
-    if (Auth::attempt($this->data, $this->data["remember"])) {
+    if (Auth::attempt(Arr::only($this->data, ['email', 'password']), $this->data["remember"])) {
       return $this->success("You are authenticated!");
     }
     
