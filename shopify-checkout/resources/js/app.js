@@ -10,12 +10,6 @@ import shopifyTheme from './themes/shopify'
 
 Laraform.theme('shopify', shopifyTheme)
 
-Laraform.config({
-  endpoints: {
-    process: '/laraform/process'
-  }
-})
-
 Vue.use(Laraform)
 
 Vue.component('SummaryElement', SummaryElement)

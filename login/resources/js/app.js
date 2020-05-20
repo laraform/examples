@@ -1,14 +1,8 @@
 require('./bootstrap');
 
 import Vue from 'vue'
-import Laraform from '@laraform/laraform/src'
+import Laraform from '@laraform/laraform'
 import LoginForm from './components/forms/LoginForm'
-
-Laraform.config({
-  endpoints: {
-    process: '/laraform/process'
-  }
-})
 
 Vue.use(Laraform)
 
