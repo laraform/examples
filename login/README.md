@@ -32,6 +32,8 @@ Route::get('/login-form', function () {
 
 Create an `app/Forms` folder in your project and copy `LoginForm.php` from `app/Forms` to yours.
 
+*Note: if you are using Community Version make sure to change `toggle` element to `checkbox`*
+
 #### 4) Compile and run
 
 Now you should have everything set up, so just run:
