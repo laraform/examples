@@ -23,7 +23,7 @@ Add the following to your `routes/web.php`:
 ``` php
 Route::get('/login-form', function () {
   return view('login', [
-    'checkout' => app('App\Forms\LoginForm')
+    'login' => app('App\Forms\LoginForm')
   ]);
 });
 ```
