@@ -1,6 +1,6 @@
-# Login Form Example
+# Login Form Example (Community Edition)
 
-This repository contains Laraform's [Login example](https://laraform.io/examples#login) code.
+This repository contains Laraform's [Login example](https://laraform.io/examples#login-community) code with checkbox instead of toggle.
 
 ## Installation
 

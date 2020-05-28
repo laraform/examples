@@ -2,7 +2,7 @@ require('./bootstrap');
 
 import Vue from 'vue'
 
-import Laraform from '@laraform/laraform'
+import Laraform from 'laraform'
 import LoginForm from './components/forms/LoginForm'
 
 Vue.use(Laraform)

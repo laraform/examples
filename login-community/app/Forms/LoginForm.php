@@ -44,7 +44,7 @@ class LoginForm extends \Laraform
         "floating" => "Password"
       ],
       "remember" => [
-        "type" => "toggle",
+        "type" => "checkbox",
         "text" => "Remember me"
       ]
     ];
