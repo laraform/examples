@@ -4,17 +4,17 @@ This repository contains Laraform's [Login example](https://laraform.io/examples
 
 ## Installation
 
-#### 1) Copy assets
-
-First merge the contents of `resources` directory with you app's `resources` directory.
-
-If you **don't have a fresh Laravel** install make sure you merge `app.js` & `app.scss` manually. 
-
 This example relies on **Bootstrap 4** so if your project does not include it install it with:
 
 ```
 npm install bootstrap
 ```
+
+#### 1) Copy assets
+
+First merge the contents of `resources` directory with you app's `resources` directory.
+
+If you **don't have a fresh Laravel** install make sure you merge `app.js` & `app.scss` manually. 
 
 #### 2) Change Theme
 
