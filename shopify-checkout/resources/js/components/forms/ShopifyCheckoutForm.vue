@@ -1,5 +1,5 @@
 <script>
-  import ShoppingMethodRadioSlot from './../slots/ShoppingMethodRadioSlot'
+  import ShippingMethodRadioSlot from './../slots/ShippingMethodRadioSlot'
 
   export default {
     mixins: [Laraform],
@@ -10,7 +10,7 @@
           shipping_method: {
             slots: {
               // Adding custom radio template for shipping method
-              radio: ShoppingMethodRadioSlot,
+              radio: ShippingMethodRadioSlot,
             },
           },
           shipping_address: {
